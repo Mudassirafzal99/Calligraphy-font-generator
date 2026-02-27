@@ -1,0 +1,172 @@
+/* ============================================================
+   ANIMATIONS — Micro-interactions, Transitions, Keyframes
+   ============================================================ */
+
+/* ---- Gold Pulse (logo) ---- */
+@keyframes goldPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(212, 175, 55, .4);
+    }
+
+    50% {
+        opacity: .7;
+        text-shadow: 0 0 20px rgba(212, 175, 55, .6);
+    }
+}
+
+/* ---- Glow Rotate (premium card bg) ---- */
+@keyframes glowRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---- Fade In Up ---- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Fade In ---- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---- Shimmer (gold loading) ---- */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ---- Slide Up (compare, grid items) ---- */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Scale in ---- */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---- Utility animation classes ---- */
+.anim-fade-in-up {
+    animation: fadeInUp var(--dur-slow) var(--ease-out) both;
+}
+
+.anim-fade-in {
+    animation: fadeIn var(--dur-base) var(--ease-out) both;
+}
+
+.anim-slide-up {
+    animation: slideUp var(--dur-slow) var(--ease-out) both;
+}
+
+.anim-scale-in {
+    animation: scaleIn var(--dur-slow) var(--ease-spring) both;
+}
+
+/* Stagger delays for grid items */
+.stagger-1 {
+    animation-delay: 50ms;
+}
+
+.stagger-2 {
+    animation-delay: 100ms;
+}
+
+.stagger-3 {
+    animation-delay: 150ms;
+}
+
+.stagger-4 {
+    animation-delay: 200ms;
+}
+
+.stagger-5 {
+    animation-delay: 250ms;
+}
+
+.stagger-6 {
+    animation-delay: 300ms;
+}
+
+.stagger-7 {
+    animation-delay: 350ms;
+}
+
+.stagger-8 {
+    animation-delay: 400ms;
+}
+
+/* ---- Shimmer placeholder for lazy loads ---- */
+.shimmer {
+    background: linear-gradient(90deg,
+            var(--clr-surface) 25%,
+            var(--clr-surface-alt) 50%,
+            var(--clr-surface) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ---- Hover lift (reusable) ---- */
+.hover-lift {
+    transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* ---- Reduce motion ---- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

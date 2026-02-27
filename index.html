@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Calligraphy Font Generator — Free Online Calligraphy Fonts for English, Urdu & Arabic</title>
+  <meta name="description" content="Generate stunning calligraphy text with 60+ premium fonts. Supports English, Urdu & Arabic. Download as PNG, JPG or SVG. Free online calligraphy font generator." />
+  <meta name="keywords" content="calligraphy font generator, calligraphy text, urdu calligraphy, arabic calligraphy, free fonts, online calligraphy tool, wedding calligraphy, beautiful fonts" />
+  <link rel="canonical" href="https://royalcalligraphy.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Royal Calligraphy Font Generator" />
+  <meta property="og:description" content="Generate stunning calligraphy text with 60+ premium fonts. Supports English, Urdu & Arabic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://royalcalligraphy.com/" />
+  <meta property="og:image" content="https://royalcalligraphy.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Royal Calligraphy Font Generator" />
+  <meta name="twitter:description" content="Generate stunning calligraphy text with 60+ premium fonts." />
+
+  <!-- Schema.org SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Royal Calligraphy Font Generator",
+    "description": "Multi-language calligraphy font generator supporting English, Urdu, and Arabic with 60+ premium fonts.",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250"
+    }
+  }
+  </script>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- UI Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo" id="header-logo">
+        <span class="header__logo-icon">✦</span>
+        <span class="header__logo-text">Royal<span class="gold">Calligraphy</span></span>
+      </a>
+      <nav class="header__nav" id="header-nav">
+        <a href="#generator" class="header__link" data-i18n="nav.generator">Generator</a>
+        <a href="#fonts" class="header__link" data-i18n="nav.fonts">Fonts</a>
+        <a href="#compare" class="header__link" data-i18n="nav.compare">Compare</a>
+        <a href="#trending" class="header__link" data-i18n="nav.trending">Trending</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-switcher__btn" id="lang-btn" aria-label="Switch language">
+            <span class="lang-switcher__current" id="lang-current">EN</span>
+            <svg class="lang-switcher__arrow" width="12" height="12" viewBox="0 0 12 12"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </button>
+          <div class="lang-switcher__dropdown" id="lang-dropdown">
+            <button class="lang-switcher__option active" data-lang="en">English</button>
+            <button class="lang-switcher__option" data-lang="ur">اردو</button>
+            <button class="lang-switcher__option" data-lang="ar">العربية</button>
+          </div>
+        </div>
+        <button class="btn btn--premium" id="premium-btn" data-i18n="nav.premium">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l2.1 4.3 4.9.7-3.5 3.4.8 4.6L8 11.8 3.7 14l.8-4.6L1 6l4.9-.7L8 1z" fill="currentColor"/></svg>
+          Premium
+        </button>
+        <button class="header__menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO / GENERATOR ========== -->
+  <main>
+    <section class="hero" id="generator">
+      <div class="container">
+        <div class="hero__heading">
+          <h1 class="hero__title" data-i18n="hero.title">
+            Create <span class="gold">Stunning</span> Calligraphy
+          </h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            60+ Premium Calligraphy Fonts · English · Urdu · Arabic
+          </p>
+        </div>
+
+        <!-- Presets -->
+        <div class="presets" id="presets-bar">
+          <span class="presets__label" data-i18n="presets.label">Quick presets:</span>
+          <div class="presets__buttons">
+            <button class="preset-btn" data-preset="names" data-i18n="presets.names">Names</button>
+            <button class="preset-btn" data-preset="quotes" data-i18n="presets.quotes">Quotes</button>
+            <button class="preset-btn" data-preset="wedding" data-i18n="presets.wedding">Wedding</button>
+          </div>
+        </div>
+
+        <!-- Text Input + Preview Area -->
+        <div class="generator" id="generator-area">
+          <div class="generator__input-wrap">
+            <textarea
+              class="generator__input"
+              id="text-input"
+              rows="3"
+              placeholder="Type your calligraphy text here..."
+              data-i18n-attr="placeholder:generator.placeholder"
+            ></textarea>
+          </div>
+
+          <div class="generator__preview-wrap">
+            <div class="preview" id="live-preview">
+              <div class="preview__watermark" id="watermark">ROYAL CALLIGRAPHY</div>
+              <div class="preview__text" id="preview-text">Your beautiful calligraphy will appear here</div>
+            </div>
+            <div class="preview__actions">
+              <button class="btn btn--outline btn--sm" id="copy-btn" data-i18n="actions.copy">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="4" y="4" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M10 4V2.5A1.5 1.5 0 008.5 1h-6A1.5 1.5 0 001 2.5v6A1.5 1.5 0 002.5 10H4" stroke="currentColor" stroke-width="1.2"/></svg>
+                Copy
+              </button>
+              <div class="export-group">
+                <button class="btn btn--gold btn--sm" id="download-btn" data-i18n="actions.download">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v9m0 0L4 7m3 3l3-3M1 12h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Download
+                </button>
+                <div class="export-dropdown" id="export-dropdown">
+                  <button class="export-option" data-format="png">PNG</button>
+                  <button class="export-option" data-format="jpg">JPG</button>
+                  <button class="export-option premium-gated" data-format="svg">
+                    SVG <span class="badge badge--premium">PRO</span>
+                  </button>
+                  <label class="export-option export-option--toggle">
+                    <input type="checkbox" id="transparent-bg" /> Transparent BG
+                  </label>
+                  <label class="export-option export-option--toggle premium-gated">
+                    <input type="checkbox" id="hd-export" disabled /> HD Export <span class="badge badge--premium">PRO</span>
+                  </label>
+                </div>
+              </div>
+              <button class="btn btn--outline btn--sm" id="share-btn" data-i18n="actions.share">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="11" cy="3" r="2" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="7" r="2" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="11" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M4.7 6.1l4.6-2.2M4.7 7.9l4.6 2.2" stroke="currentColor" stroke-width="1.2"/></svg>
+                Share
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customization Controls -->
+        <div class="controls-panel" id="controls-panel">
+          <button class="controls-panel__toggle" id="controls-toggle" data-i18n="controls.title">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5h12M3 9h12M3 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/><circle cx="12" cy="9" r="1.5" fill="currentColor"/><circle cx="8" cy="13" r="1.5" fill="currentColor"/></svg>
+            Advanced Controls
+            <svg class="controls-panel__chevron" width="14" height="14" viewBox="0 0 14 14"><path d="M4 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </button>
+          <div class="controls-panel__body" id="controls-body">
+            <div class="controls-grid">
+              <div class="control-group">
+                <label class="control-label" data-i18n="controls.fontSize">Font Size</label>
+                <div class="control-slider-wrap">
+                  <input type="range" class="control-slider" id="font-size" min="12" max="120" value="48" />
+                  <span class="control-value" id="font-size-val">48px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" data-i18n="controls.strokeThickness">Stroke Thickness</label>
+                <div class="control-slider-wrap">
+                  <input type="range" class="control-slider" id="stroke-thickness" min="0" max="5" value="0" step="0.5" />
+                  <span class="control-value" id="stroke-val">0px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" data-i18n="controls.letterSpacing">Letter Spacing</label>
+                <div class="control-slider-wrap">
+                  <input type="range" class="control-slider" id="letter-spacing" min="-5" max="20" value="0" step="0.5" />
+                  <span class="control-value" id="spacing-val">0px</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" data-i18n="controls.lineHeight">Line Height</label>
+                <div class="control-slider-wrap">
+                  <input type="range" class="control-slider" id="line-height" min="0.8" max="3" value="1.4" step="0.1" />
+                  <span class="control-value" id="line-height-val">1.4</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" data-i18n="controls.textColor">Text Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" class="color-picker" id="text-color" value="#d4af37" />
+                  <span class="control-value" id="color-val">#d4af37</span>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" data-i18n="controls.strokeColor">Stroke Color</label>
+                <div class="color-picker-wrap">
+                  <input type="color" class="color-picker" id="stroke-color" value="#0b1d33" />
+                  <span class="control-value" id="stroke-color-val">#0b1d33</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FONT BROWSER ========== -->
+    <section class="section section--fonts" id="fonts">
+      <div class="container">
+        <h2 class="section__title" data-i18n="fonts.title">
+          Browse <span class="gold">60+</span> Calligraphy Fonts
+        </h2>
+        <p class="section__subtitle" data-i18n="fonts.subtitle">
+          Find the perfect font for your project. Filter by language.
+        </p>
+
+        <!-- Filter Tabs -->
+        <div class="font-filters" id="font-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="fonts.all">All Fonts</button>
+          <button class="filter-btn" data-filter="en" data-i18n="fonts.english">English</button>
+          <button class="filter-btn" data-filter="ur" data-i18n="fonts.urdu">Urdu</button>
+          <button class="filter-btn" data-filter="ar" data-i18n="fonts.arabic">Arabic</button>
+          <button class="filter-btn" data-filter="favorites" data-i18n="fonts.favorites">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12.5s-5.5-3.5-5.5-7A3 3 0 017 3a3 3 0 015.5 2.5c0 3.5-5.5 7-5.5 7z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+            Favorites
+          </button>
+        </div>
+
+        <!-- Font Grid -->
+        <div class="font-grid" id="font-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FONT COMPARISON ========== -->
+    <section class="section section--compare" id="compare">
+      <div class="container">
+        <h2 class="section__title" data-i18n="compare.title">
+          Compare <span class="gold">Fonts</span> Side by Side
+        </h2>
+        <p class="section__subtitle" data-i18n="compare.subtitle">
+          Select up to 3 fonts to compare them with your text.
+        </p>
+        <div class="compare-grid" id="compare-grid">
+          <div class="compare-slot" id="compare-slot-1">
+            <select class="compare-select" id="compare-select-1">
+              <option value="">Select a font...</option>
+            </select>
+            <div class="compare-preview" id="compare-preview-1">Select a font to preview</div>
+          </div>
+          <div class="compare-slot" id="compare-slot-2">
+            <select class="compare-select" id="compare-select-2">
+              <option value="">Select a font...</option>
+            </select>
+            <div class="compare-preview" id="compare-preview-2">Select a font to preview</div>
+          </div>
+          <div class="compare-slot" id="compare-slot-3">
+            <select class="compare-select" id="compare-select-3">
+              <option value="">Select a font...</option>
+            </select>
+            <div class="compare-preview" id="compare-preview-3">Select a font to preview</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRENDING FONTS ========== -->
+    <section class="section section--trending" id="trending">
+      <div class="container">
+        <h2 class="section__title" data-i18n="trending.title">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align:middle"><path d="M10 2C7 6 4 8 4 12a6 6 0 0012 0c0-4-3-6-6-10z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          Trending <span class="gold">Fonts</span>
+        </h2>
+        <div class="trending-grid" id="trending-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PREMIUM UPGRADE ========== -->
+    <section class="section section--premium" id="premium-section">
+      <div class="container">
+        <div class="premium-card">
+          <div class="premium-card__glow"></div>
+          <h2 class="premium-card__title" data-i18n="premium.title">
+            Unlock <span class="gold">Premium</span> Features
+          </h2>
+          <p class="premium-card__desc" data-i18n="premium.desc">
+            Get access to all 60+ fonts, HD export, SVG download, and no watermarks.
+          </p>
+          <div class="premium-card__features">
+            <div class="premium-feature">
+              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <span data-i18n="premium.feat1">All 60+ Premium Fonts</span>
+            </div>
+            <div class="premium-feature">
+              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <span data-i18n="premium.feat2">No Watermarks</span>
+            </div>
+            <div class="premium-feature">
+              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <span data-i18n="premium.feat3">HD Export</span>
+            </div>
+            <div class="premium-feature">
+              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <span data-i18n="premium.feat4">SVG Export</span>
+            </div>
+          </div>
+          <button class="btn btn--gold btn--lg" id="upgrade-btn" data-i18n="premium.upgrade">
+            Upgrade to Premium — $9.99/mo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AD ZONE ========== -->
+    <div class="ad-zone ad-zone--banner" id="ad-zone-1">
+      <div class="container">
+        <div class="ad-placeholder" data-ad-slot="banner-1">
+          <!-- AdSense code goes here -->
+          <span class="ad-label">Advertisement</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== BLOG READY ========== -->
+    <section class="section section--blog" id="blog">
+      <div class="container">
+        <h2 class="section__title" data-i18n="blog.title">
+          Calligraphy <span class="gold">Tips & Guides</span>
+        </h2>
+        <div class="blog-grid" id="blog-grid">
+          <article class="blog-card">
+            <div class="blog-card__img"></div>
+            <h3 class="blog-card__title">Best Calligraphy Fonts for Wedding Invitations</h3>
+            <p class="blog-card__excerpt">Discover the most elegant calligraphy fonts for your special day...</p>
+            <a href="#" class="blog-card__link">Read More →</a>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card__img"></div>
+            <h3 class="blog-card__title">Urdu Calligraphy: A Beginner's Guide</h3>
+            <p class="blog-card__excerpt">Learn the beauty of Nastaliq script and how to create stunning Urdu text...</p>
+            <a href="#" class="blog-card__link">Read More →</a>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card__img"></div>
+            <h3 class="blog-card__title">Arabic Calligraphy Styles Explained</h3>
+            <p class="blog-card__excerpt">From Thuluth to Diwani — explore the rich world of Arabic calligraphy...</p>
+            <a href="#" class="blog-card__link">Read More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="header__logo-icon">✦</span>
+        <span class="header__logo-text">Royal<span class="gold">Calligraphy</span></span>
+        <p class="footer__tagline" data-i18n="footer.tagline">The most beautiful calligraphy font generator on the web.</p>
+      </div>
+      <div class="footer__links">
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <a href="#generator" data-i18n="nav.generator">Generator</a>
+        <a href="#fonts" data-i18n="nav.fonts">Fonts</a>
+        <a href="#compare" data-i18n="nav.compare">Compare</a>
+        <a href="#trending" data-i18n="nav.trending">Trending</a>
+        <a href="#blog" data-i18n="nav.blog">Blog</a>
+      </div>
+      <div class="footer__links">
+        <h4 data-i18n="footer.resources">Resources</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Royal Calligraphy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== MODALS ========== -->
+  <div class="modal-overlay" id="premium-modal">
+    <div class="modal">
+      <button class="modal__close" id="modal-close">&times;</button>
+      <h2 class="modal__title" data-i18n="premium.modalTitle">Upgrade to Premium</h2>
+      <p class="modal__desc" data-i18n="premium.modalDesc">Unlock all features and take your calligraphy to the next level.</p>
+      <div class="modal__pricing">
+        <div class="pricing-card">
+          <h3>Monthly</h3>
+          <div class="pricing-card__price">$9.99<span>/mo</span></div>
+          <button class="btn btn--gold btn--block">Subscribe</button>
+        </div>
+        <div class="pricing-card pricing-card--popular">
+          <div class="pricing-card__badge">Best Value</div>
+          <h3>Yearly</h3>
+          <div class="pricing-card__price">$79.99<span>/yr</span></div>
+          <p class="pricing-card__save">Save 33%</p>
+          <button class="btn btn--gold btn--block">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Modal -->
+  <div class="modal-overlay" id="share-modal">
+    <div class="modal modal--sm">
+      <button class="modal__close" id="share-modal-close">&times;</button>
+      <h2 class="modal__title" data-i18n="share.title">Share Your Creation</h2>
+      <div class="share-link-wrap">
+        <input type="text" class="share-link-input" id="share-link-input" readonly />
+        <button class="btn btn--gold btn--sm" id="copy-share-link">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast__text" id="toast-text"></span>
+  </div>
+
+  <!-- Hidden canvas for export -->
+  <canvas id="export-canvas" style="display:none;"></canvas>
+
+  <!-- App scripts -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
