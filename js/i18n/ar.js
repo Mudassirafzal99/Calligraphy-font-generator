@@ -14,7 +14,7 @@ export default {
     },
     hero: {
         title: 'أنشئ خطاً <span class="gold">مذهلاً</span>',
-        subtitle: '60+ خط خطاطي مميز · الإنجليزية · الأردية · العربية'
+        subtitle: '60+ خط خطاطي · الإنجليزية · الأردية · العربية'
     },
     presets: {
         label: 'قوالب سريعة:',

@@ -248,7 +248,7 @@
     color: var(--clr-text);
     font-size: var(--fs-lg);
     transition: border-color var(--dur-base);
-    min-height: 100px;
+    min-height: 180px;
 }
 
 .generator__input:focus {
@@ -421,8 +421,6 @@
     gap: var(--sp-4) var(--sp-6);
     padding: 0 var(--sp-6) var(--sp-6);
 }
-
-.control-group {}
 
 .control-label {
     display: block;

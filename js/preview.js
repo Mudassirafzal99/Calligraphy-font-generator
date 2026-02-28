@@ -44,6 +44,12 @@ function updatePreview() {
     previewEl.style.lineHeight = state.lineHeight;
     previewEl.style.color = state.textColor;
 
+    // Apply font to textarea as well
+    const textInput = document.getElementById('text-input');
+    if (textInput) {
+        textInput.style.fontFamily = state.fontFamily;
+    }
+
     if (state.strokeThickness > 0) {
         previewEl.style.webkitTextStroke = `${state.strokeThickness}px ${state.strokeColor}`;
         previewEl.style.textStroke = `${state.strokeThickness}px ${state.strokeColor}`;

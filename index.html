@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Royal Calligraphy Font Generator — Free Online Calligraphy Fonts for English, Urdu & Arabic</title>
-  <meta name="description" content="Generate stunning calligraphy text with 60+ premium fonts. Supports English, Urdu & Arabic. Download as PNG, JPG or SVG. Free online calligraphy font generator." />
-  <meta name="keywords" content="calligraphy font generator, calligraphy text, urdu calligraphy, arabic calligraphy, free fonts, online calligraphy tool, wedding calligraphy, beautiful fonts" />
+  <meta name="description"
+    content="Generate stunning calligraphy text with 60+ premium fonts. Supports English, Urdu & Arabic. Download as PNG, JPG or SVG. Free online calligraphy font generator." />
+  <meta name="keywords"
+    content="calligraphy font generator, calligraphy text, urdu calligraphy, arabic calligraphy, free fonts, online calligraphy tool, wedding calligraphy, beautiful fonts" />
   <link rel="canonical" href="https://royalcalligraphy.com/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Royal Calligraphy Font Generator" />
-  <meta property="og:description" content="Generate stunning calligraphy text with 60+ premium fonts. Supports English, Urdu & Arabic." />
+  <meta property="og:description"
+    content="Generate stunning calligraphy text with 60+ premium fonts. Supports English, Urdu & Arabic." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://royalcalligraphy.com/" />
   <meta property="og:image" content="https://royalcalligraphy.com/og-image.png" />
@@ -46,8 +50,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- UI Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- UI Fonts (Inter = body, Playfair Display = headings, Noto Sans Arabic = RTL body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -59,6 +65,7 @@
   <link rel="stylesheet" href="/css/layout.css" />
   <link rel="stylesheet" href="/css/animations.css" />
 </head>
+
 <body>
 
   <!-- ========== HEADER ========== -->
@@ -78,7 +85,9 @@
         <div class="lang-switcher" id="lang-switcher">
           <button class="lang-switcher__btn" id="lang-btn" aria-label="Switch language">
             <span class="lang-switcher__current" id="lang-current">EN</span>
-            <svg class="lang-switcher__arrow" width="12" height="12" viewBox="0 0 12 12"><path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            <svg class="lang-switcher__arrow" width="12" height="12" viewBox="0 0 12 12">
+              <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none" />
+            </svg>
           </button>
           <div class="lang-switcher__dropdown" id="lang-dropdown">
             <button class="lang-switcher__option active" data-lang="en">English</button>
@@ -87,7 +96,9 @@
           </div>
         </div>
         <button class="btn btn--premium" id="premium-btn" data-i18n="nav.premium">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l2.1 4.3 4.9.7-3.5 3.4.8 4.6L8 11.8 3.7 14l.8-4.6L1 6l4.9-.7L8 1z" fill="currentColor"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1l2.1 4.3 4.9.7-3.5 3.4.8 4.6L8 11.8 3.7 14l.8-4.6L1 6l4.9-.7L8 1z" fill="currentColor" />
+          </svg>
           Premium
         </button>
         <button class="header__menu-toggle" id="menu-toggle" aria-label="Toggle menu">
@@ -106,7 +117,7 @@
             Create <span class="gold">Stunning</span> Calligraphy
           </h1>
           <p class="hero__subtitle" data-i18n="hero.subtitle">
-            60+ Premium Calligraphy Fonts · English · Urdu · Arabic
+            60+ Calligraphy Fonts · English · Urdu · Arabic
           </p>
         </div>
 
@@ -120,16 +131,23 @@
           </div>
         </div>
 
+        <!-- Top Font Selector Dropdown -->
+        <div class="font-selector-wrap" id="font-selector-wrap">
+          <div class="font-selector" id="font-selector">
+            <input type="text" class="font-selector__search" id="font-search"
+              placeholder="Search fonts (e.g., Pacifico)" autocomplete="off">
+            <div class="font-selector__dropdown" id="font-dropdown-list">
+              <!-- JS populated font items will go here -->
+            </div>
+          </div>
+        </div>
+
         <!-- Text Input + Preview Area -->
         <div class="generator" id="generator-area">
           <div class="generator__input-wrap">
-            <textarea
-              class="generator__input"
-              id="text-input"
-              rows="3"
-              placeholder="Type your calligraphy text here..."
+            <textarea class="generator__input" id="text-input" rows="3" placeholder="Type your calligraphy text here..."
               data-i18n-attr="placeholder:generator.placeholder"
-            ></textarea>
+              style="font-family: 'Great Vibes', cursive;"></textarea>
           </div>
 
           <div class="generator__preview-wrap">
@@ -139,12 +157,19 @@
             </div>
             <div class="preview__actions">
               <button class="btn btn--outline btn--sm" id="copy-btn" data-i18n="actions.copy">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="4" y="4" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M10 4V2.5A1.5 1.5 0 008.5 1h-6A1.5 1.5 0 001 2.5v6A1.5 1.5 0 002.5 10H4" stroke="currentColor" stroke-width="1.2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <rect x="4" y="4" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                  <path d="M10 4V2.5A1.5 1.5 0 008.5 1h-6A1.5 1.5 0 001 2.5v6A1.5 1.5 0 002.5 10H4"
+                    stroke="currentColor" stroke-width="1.2" />
+                </svg>
                 Copy
               </button>
               <div class="export-group">
                 <button class="btn btn--gold btn--sm" id="download-btn" data-i18n="actions.download">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v9m0 0L4 7m3 3l3-3M1 12h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 1v9m0 0L4 7m3 3l3-3M1 12h12" stroke="currentColor" stroke-width="1.3"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
                   Download
                 </button>
                 <div class="export-dropdown" id="export-dropdown">
@@ -157,12 +182,18 @@
                     <input type="checkbox" id="transparent-bg" /> Transparent BG
                   </label>
                   <label class="export-option export-option--toggle premium-gated">
-                    <input type="checkbox" id="hd-export" disabled /> HD Export <span class="badge badge--premium">PRO</span>
+                    <input type="checkbox" id="hd-export" disabled /> HD Export <span
+                      class="badge badge--premium">PRO</span>
                   </label>
                 </div>
               </div>
               <button class="btn btn--outline btn--sm" id="share-btn" data-i18n="actions.share">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="11" cy="3" r="2" stroke="currentColor" stroke-width="1.2"/><circle cx="3" cy="7" r="2" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="11" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M4.7 6.1l4.6-2.2M4.7 7.9l4.6 2.2" stroke="currentColor" stroke-width="1.2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <circle cx="11" cy="3" r="2" stroke="currentColor" stroke-width="1.2" />
+                  <circle cx="3" cy="7" r="2" stroke="currentColor" stroke-width="1.2" />
+                  <circle cx="11" cy="11" r="2" stroke="currentColor" stroke-width="1.2" />
+                  <path d="M4.7 6.1l4.6-2.2M4.7 7.9l4.6 2.2" stroke="currentColor" stroke-width="1.2" />
+                </svg>
                 Share
               </button>
             </div>
@@ -172,9 +203,16 @@
         <!-- Customization Controls -->
         <div class="controls-panel" id="controls-panel">
           <button class="controls-panel__toggle" id="controls-toggle" data-i18n="controls.title">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5h12M3 9h12M3 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/><circle cx="12" cy="9" r="1.5" fill="currentColor"/><circle cx="8" cy="13" r="1.5" fill="currentColor"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 5h12M3 9h12M3 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="6" cy="5" r="1.5" fill="currentColor" />
+              <circle cx="12" cy="9" r="1.5" fill="currentColor" />
+              <circle cx="8" cy="13" r="1.5" fill="currentColor" />
+            </svg>
             Advanced Controls
-            <svg class="controls-panel__chevron" width="14" height="14" viewBox="0 0 14 14"><path d="M4 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            <svg class="controls-panel__chevron" width="14" height="14" viewBox="0 0 14 14">
+              <path d="M4 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" fill="none" />
+            </svg>
           </button>
           <div class="controls-panel__body" id="controls-body">
             <div class="controls-grid">
@@ -188,21 +226,24 @@
               <div class="control-group">
                 <label class="control-label" data-i18n="controls.strokeThickness">Stroke Thickness</label>
                 <div class="control-slider-wrap">
-                  <input type="range" class="control-slider" id="stroke-thickness" min="0" max="5" value="0" step="0.5" />
+                  <input type="range" class="control-slider" id="stroke-thickness" min="0" max="5" value="0"
+                    step="0.5" />
                   <span class="control-value" id="stroke-val">0px</span>
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" data-i18n="controls.letterSpacing">Letter Spacing</label>
                 <div class="control-slider-wrap">
-                  <input type="range" class="control-slider" id="letter-spacing" min="-5" max="20" value="0" step="0.5" />
+                  <input type="range" class="control-slider" id="letter-spacing" min="-5" max="20" value="0"
+                    step="0.5" />
                   <span class="control-value" id="spacing-val">0px</span>
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label" data-i18n="controls.lineHeight">Line Height</label>
                 <div class="control-slider-wrap">
-                  <input type="range" class="control-slider" id="line-height" min="0.8" max="3" value="1.4" step="0.1" />
+                  <input type="range" class="control-slider" id="line-height" min="0.8" max="3" value="1.4"
+                    step="0.1" />
                   <span class="control-value" id="line-height-val">1.4</span>
                 </div>
               </div>
@@ -243,7 +284,10 @@
           <button class="filter-btn" data-filter="ur" data-i18n="fonts.urdu">Urdu</button>
           <button class="filter-btn" data-filter="ar" data-i18n="fonts.arabic">Arabic</button>
           <button class="filter-btn" data-filter="favorites" data-i18n="fonts.favorites">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12.5s-5.5-3.5-5.5-7A3 3 0 017 3a3 3 0 015.5 2.5c0 3.5-5.5 7-5.5 7z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 12.5s-5.5-3.5-5.5-7A3 3 0 017 3a3 3 0 015.5 2.5c0 3.5-5.5 7-5.5 7z" stroke="currentColor"
+                stroke-width="1.2" fill="none" />
+            </svg>
             Favorites
           </button>
         </div>
@@ -291,7 +335,10 @@
     <section class="section section--trending" id="trending">
       <div class="container">
         <h2 class="section__title" data-i18n="trending.title">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align:middle"><path d="M10 2C7 6 4 8 4 12a6 6 0 0012 0c0-4-3-6-6-10z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align:middle">
+            <path d="M10 2C7 6 4 8 4 12a6 6 0 0012 0c0-4-3-6-6-10z" stroke="currentColor" stroke-width="1.5"
+              fill="none" />
+          </svg>
           Trending <span class="gold">Fonts</span>
         </h2>
         <div class="trending-grid" id="trending-grid">
@@ -313,19 +360,31 @@
           </p>
           <div class="premium-card__features">
             <div class="premium-feature">
-              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round" />
+              </svg>
               <span data-i18n="premium.feat1">All 60+ Premium Fonts</span>
             </div>
             <div class="premium-feature">
-              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round" />
+              </svg>
               <span data-i18n="premium.feat2">No Watermarks</span>
             </div>
             <div class="premium-feature">
-              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round" />
+              </svg>
               <span data-i18n="premium.feat3">HD Export</span>
             </div>
             <div class="premium-feature">
-              <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/><path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <circle cx="9" cy="9" r="8" fill="none" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M5.5 9l2.5 2.5 5-5" stroke="#d4af37" stroke-width="1.5" fill="none" stroke-linecap="round" />
+              </svg>
               <span data-i18n="premium.feat4">SVG Export</span>
             </div>
           </div>
@@ -362,7 +421,8 @@
           <article class="blog-card">
             <div class="blog-card__img"></div>
             <h3 class="blog-card__title">Urdu Calligraphy: A Beginner's Guide</h3>
-            <p class="blog-card__excerpt">Learn the beauty of Nastaliq script and how to create stunning Urdu text...</p>
+            <p class="blog-card__excerpt">Learn the beauty of Nastaliq script and how to create stunning Urdu text...
+            </p>
             <a href="#" class="blog-card__link">Read More →</a>
           </article>
           <article class="blog-card">
@@ -382,7 +442,8 @@
       <div class="footer__brand">
         <span class="header__logo-icon">✦</span>
         <span class="header__logo-text">Royal<span class="gold">Calligraphy</span></span>
-        <p class="footer__tagline" data-i18n="footer.tagline">The most beautiful calligraphy font generator on the web.</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">The most beautiful calligraphy font generator on the web.
+        </p>
       </div>
       <div class="footer__links">
         <h4 data-i18n="footer.quickLinks">Quick Links</h4>
@@ -411,7 +472,8 @@
     <div class="modal">
       <button class="modal__close" id="modal-close">&times;</button>
       <h2 class="modal__title" data-i18n="premium.modalTitle">Upgrade to Premium</h2>
-      <p class="modal__desc" data-i18n="premium.modalDesc">Unlock all features and take your calligraphy to the next level.</p>
+      <p class="modal__desc" data-i18n="premium.modalDesc">Unlock all features and take your calligraphy to the next
+        level.</p>
       <div class="modal__pricing">
         <div class="pricing-card">
           <h3>Monthly</h3>
@@ -452,4 +514,5 @@
   <!-- App scripts -->
   <script type="module" src="/js/app.js"></script>
 </body>
+
 </html>

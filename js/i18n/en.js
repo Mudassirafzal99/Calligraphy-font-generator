@@ -14,7 +14,7 @@ export default {
     },
     hero: {
         title: 'Create <span class="gold">Stunning</span> Calligraphy',
-        subtitle: '60+ Premium Calligraphy Fonts · English · Urdu · Arabic'
+        subtitle: '60+ Calligraphy Fonts · English · Urdu · Arabic'
     },
     presets: {
         label: 'Quick presets:',

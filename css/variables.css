@@ -3,63 +3,72 @@
    ============================================================ */
 :root {
   /* ---- Brand Colors ---- */
-  --clr-navy:        #0b1d33;
-  --clr-navy-light:  #112a4a;
-  --clr-navy-dark:   #060f1c;
-  --clr-gold:        #d4af37;
-  --clr-gold-light:  #e8cc6e;
-  --clr-gold-dark:   #b8952e;
-  --clr-gold-glow:   rgba(212, 175, 55, .18);
+  --clr-navy: #0b1d33;
+  --clr-navy-light: #112a4a;
+  --clr-navy-dark: #060f1c;
+  --clr-gold: #d4af37;
+  --clr-gold-light: #e8cc6e;
+  --clr-gold-dark: #b8952e;
+  --clr-gold-glow: rgba(212, 175, 55, .18);
 
   /* ---- Neutrals ---- */
-  --clr-white:       #ffffff;
-  --clr-off-white:   #f5f2ea;
-  --clr-gray-100:    #e8e5de;
-  --clr-gray-200:    #c9c5ba;
-  --clr-gray-300:    #9a9588;
-  --clr-gray-400:    #6b6760;
-  --clr-gray-500:    #3d3a35;
-  --clr-black:       #0a0a0a;
+  --clr-white: #ffffff;
+  --clr-off-white: #f5f2ea;
+  --clr-gray-100: #e8e5de;
+  --clr-gray-200: #c9c5ba;
+  --clr-gray-300: #9a9588;
+  --clr-gray-400: #6b6760;
+  --clr-gray-500: #3d3a35;
+  --clr-black: #0a0a0a;
 
   /* ---- Semantic ---- */
-  --clr-bg:          var(--clr-navy-dark);
-  --clr-surface:     var(--clr-navy);
+  --clr-bg: var(--clr-navy-dark);
+  --clr-surface: var(--clr-navy);
   --clr-surface-alt: var(--clr-navy-light);
-  --clr-text:        var(--clr-off-white);
-  --clr-text-muted:  var(--clr-gray-300);
-  --clr-accent:      var(--clr-gold);
-  --clr-accent-hover:var(--clr-gold-light);
-  --clr-border:      rgba(212, 175, 55, .15);
-  --clr-overlay:     rgba(6, 15, 28, .85);
+  --clr-text: var(--clr-off-white);
+  --clr-text-muted: var(--clr-gray-300);
+  --clr-accent: var(--clr-gold);
+  --clr-accent-hover: var(--clr-gold-light);
+  --clr-border: rgba(212, 175, 55, .15);
+  --clr-overlay: rgba(6, 15, 28, .85);
 
   /* ---- Typography ---- */
-  --ff-heading:    'Playfair Display', Georgia, serif;
-  --ff-body:       'Inter', system-ui, -apple-system, sans-serif;
-  --fw-light:      300;
-  --fw-regular:    400;
-  --fw-medium:     500;
-  --fw-semibold:   600;
-  --fw-bold:       700;
+  --ff-heading: 'Playfair Display', Georgia, serif;
+  --ff-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
-  --fs-xs:   0.75rem;    /* 12px */
-  --fs-sm:   0.875rem;   /* 14px */
-  --fs-base: 1rem;       /* 16px */
-  --fs-md:   1.125rem;   /* 18px */
-  --fs-lg:   1.25rem;    /* 20px */
-  --fs-xl:   1.5rem;     /* 24px */
-  --fs-2xl:  2rem;       /* 32px */
-  --fs-3xl:  2.5rem;     /* 40px */
-  --fs-4xl:  3rem;       /* 48px */
+  --fs-xs: 0.75rem;
+  /* 12px */
+  --fs-sm: 0.875rem;
+  /* 14px */
+  --fs-base: 1rem;
+  /* 16px */
+  --fs-md: 1.125rem;
+  /* 18px */
+  --fs-lg: 1.25rem;
+  /* 20px */
+  --fs-xl: 1.5rem;
+  /* 24px */
+  --fs-2xl: 2rem;
+  /* 32px */
+  --fs-3xl: 2.5rem;
+  /* 40px */
+  --fs-4xl: 3rem;
+  /* 48px */
   --fs-hero: clamp(2rem, 5vw, 3.5rem);
 
   /* ---- Spacing ---- */
-  --sp-1:  0.25rem;
-  --sp-2:  0.5rem;
-  --sp-3:  0.75rem;
-  --sp-4:  1rem;
-  --sp-5:  1.25rem;
-  --sp-6:  1.5rem;
-  --sp-8:  2rem;
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
   --sp-10: 2.5rem;
   --sp-12: 3rem;
   --sp-16: 4rem;
@@ -71,34 +80,35 @@
   --header-height: 72px;
 
   /* ---- Border Radius ---- */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  16px;
-  --radius-xl:  24px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 
   /* ---- Shadows ---- */
-  --shadow-sm:   0 2px 8px rgba(0,0,0,.15);
-  --shadow-md:   0 4px 20px rgba(0,0,0,.25);
-  --shadow-lg:   0 8px 40px rgba(0,0,0,.35);
-  --shadow-gold: 0 0 30px rgba(212,175,55,.2);
-  --shadow-glow: 0 0 60px rgba(212,175,55,.15);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .15);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, .25);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, .35);
+  --shadow-gold: 0 0 30px rgba(212, 175, 55, .2);
+  --shadow-glow: 0 0 60px rgba(212, 175, 55, .15);
 
   /* ---- Transitions ---- */
-  --ease-out:  cubic-bezier(.25,.46,.45,.94);
-  --ease-spring: cubic-bezier(.34,1.56,.64,1);
-  --dur-fast:  150ms;
-  --dur-base:  250ms;
-  --dur-slow:  400ms;
+  --ease-out: cubic-bezier(.25, .46, .45, .94);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
 
   /* ---- Z-index ---- */
   --z-dropdown: 100;
-  --z-sticky:   200;
-  --z-modal:    1000;
-  --z-toast:    1100;
+  --z-sticky: 200;
+  --z-modal: 1000;
+  --z-toast: 1100;
 }
 
-/* RTL adjustments */
+/* RTL adjustments — Noto Sans Arabic is loaded via Google Fonts in <head> */
 [dir="rtl"] {
-  --ff-body: 'Inter', 'Noto Sans Arabic', system-ui, sans-serif;
+  --ff-body: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+  --ff-heading: 'Noto Sans Arabic', 'Playfair Display', Georgia, serif;
 }

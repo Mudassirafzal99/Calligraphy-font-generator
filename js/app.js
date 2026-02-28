@@ -8,6 +8,7 @@ import { getTrendingFonts, getAllFonts } from './fonts/font-data.js';
 import { initPreview, setPreviewText, setPreviewFont } from './preview.js';
 import { initControls } from './controls.js';
 import { initFontBrowser } from './font-browser.js';
+import { initFontSelector } from './font-selector.js';
 import { initComparison, updateComparisonText } from './comparison.js';
 import { initPresets } from './presets.js';
 import { initShare } from './share.js';
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPreview();
     initControls();
     initFontBrowser();
+    initFontSelector();
     initComparison();
     initPresets();
     initPremium();
