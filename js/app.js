@@ -69,8 +69,16 @@ function setupTextInput() {
     if (!textInput) return;
 
     textInput.addEventListener('input', () => {
-        setPreviewText(textInput.value);
-        updateComparisonText(textInput.value);
+        const val = textInput.value;
+        setPreviewText(val);
+        updateComparisonText(val);
+
+        // Sync text to all font cards and dropdown items globally
+        document.querySelectorAll('.font-card__preview, .font-selector__item > span[data-sample]').forEach(el => {
+            const defaultSample = el.getAttribute('data-sample') || 'Royal Calligraphy';
+            el.textContent = val || defaultSample;
+        });
+
         trackEvent('editor', 'type');
     });
 }
@@ -187,9 +195,13 @@ function renderTrendingFonts() {
             ? `<span class="badge badge--premium">PRO</span>`
             : '';
 
-        let sampleText = 'Royal Calligraphy';
-        if (font.languages.includes('ur')) sampleText = 'شاہی خطاطی';
-        else if (font.languages.includes('ar')) sampleText = 'خطاطة ملكية';
+        let defaultSample = 'Royal Calligraphy';
+        if (font.languages.includes('ur')) defaultSample = 'شاہی خطاطی';
+        else if (font.languages.includes('ar')) defaultSample = 'خطاطة ملكية';
+
+        const textInput = document.getElementById('text-input');
+        const customText = textInput ? textInput.value : '';
+        const displayText = customText || defaultSample;
 
         card.innerHTML = `
       <div class="font-card__name">
@@ -197,8 +209,8 @@ function renderTrendingFonts() {
         <span class="badge badge--trending">🔥 Trending</span>
         ${premiumBadge}
       </div>
-      <div class="font-card__preview" style="font-family: ${font.family}">
-        ${sampleText}
+      <div class="font-card__preview" style="font-family: ${font.family}" data-sample="${defaultSample}">
+        ${displayText}
       </div>
       <div class="font-card__actions">
         <button class="font-card__fav ${favActive}" data-font-id="${font.id}" aria-label="Toggle favorite">

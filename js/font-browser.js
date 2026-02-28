@@ -64,9 +64,13 @@ function renderFontGrid() {
             : '';
 
         // Preview text based on language
-        let sampleText = 'Royal Calligraphy';
-        if (font.languages.includes('ur')) sampleText = 'شاہی خطاطی';
-        else if (font.languages.includes('ar')) sampleText = 'خطاطة ملكية';
+        let defaultSample = 'Royal Calligraphy';
+        if (font.languages.includes('ur')) defaultSample = 'شاہی خطاطی';
+        else if (font.languages.includes('ar')) defaultSample = 'خطاطة ملكية';
+
+        const textInput = document.getElementById('text-input');
+        const customText = textInput ? textInput.value : '';
+        const displayText = customText || defaultSample;
 
         card.innerHTML = `
       ${lockIcon}
@@ -75,8 +79,8 @@ function renderFontGrid() {
         ${trendBadge}
         ${premiumBadge}
       </div>
-      <div class="font-card__preview" style="font-family: ${font.family}">
-        ${sampleText}
+      <div class="font-card__preview" style="font-family: ${font.family}" data-sample="${defaultSample}">
+        ${displayText}
       </div>
       <div class="font-card__actions">
         <button class="font-card__fav ${favActive}" data-font-id="${font.id}" aria-label="Toggle favorite">

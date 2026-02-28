@@ -36,12 +36,16 @@ export function initFontSelector() {
             }
 
             // Display text based on available language
-            let sampleText = 'Royal Calligraphy';
-            if (font.languages.includes('ur')) sampleText = 'شاہی خطاطی';
-            else if (font.languages.includes('ar')) sampleText = 'خطاطة ملكية';
+            let defaultSample = 'Royal Calligraphy';
+            if (font.languages.includes('ur')) defaultSample = 'شاہی خطاطی';
+            else if (font.languages.includes('ar')) defaultSample = 'خطاطة ملكية';
+
+            const textInput = document.getElementById('text-input');
+            const customText = textInput ? textInput.value : '';
+            const displayText = customText || defaultSample;
 
             item.innerHTML = `
-        <span style="font-family: ${font.family}">${sampleText}</span>
+        <span style="font-family: ${font.family}" data-sample="${defaultSample}">${displayText}</span>
         <span class="font-selector__item-name">${font.name}</span>
       `;
 
