@@ -175,22 +175,25 @@
 
 /* ---- HERO ---- */
 .hero {
-    padding: var(--sp-16) 0 var(--sp-12);
+    padding: 40px 20px;
     position: relative;
 }
 
 .hero__heading {
     text-align: center;
-    margin-bottom: var(--sp-8);
+    margin-bottom: var(--sp-4);
 }
 
 .hero__title {
-    margin-bottom: var(--sp-4);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
 }
 
 .hero__subtitle {
     color: var(--clr-text-muted);
-    font-size: var(--fs-md);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 /* ---- PRESETS ---- */
@@ -232,7 +235,7 @@
 .generator {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-6);
+    gap: 15px;
 }
 
 .generator__input-wrap {
@@ -244,11 +247,13 @@
     background: var(--clr-surface);
     border: 1.5px solid var(--clr-border);
     border-radius: var(--radius-lg);
-    padding: var(--sp-6);
+    padding: 10px;
     color: var(--clr-text);
-    font-size: var(--fs-lg);
+    font-size: 1.1rem;
     transition: border-color var(--dur-base);
-    min-height: 180px;
+    height: 120px;
+    max-height: 150px;
+    box-sizing: border-box;
 }
 
 .generator__input:focus {
@@ -760,11 +765,20 @@
     }
 
     .hero {
-        padding: var(--sp-10) 0 var(--sp-8);
+        padding: 30px 15px;
     }
 
     .hero__title {
-        font-size: var(--fs-2xl);
+        font-size: 2rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.3rem;
+    }
+
+    .generator__input {
+        height: 100px;
+        font-size: 1rem;
     }
 
     .font-grid,
