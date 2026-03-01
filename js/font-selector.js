@@ -144,6 +144,20 @@ export function initFontSelector() {
         }
     });
 
+    // Helper to highlight arrows
+    function updateArrowHighlight(key) {
+        const upArrow = wrap.querySelector('.font-arrow-up');
+        const downArrow = wrap.querySelector('.font-arrow-down');
+        if (!upArrow || !downArrow) return;
+
+        upArrow.style.color = key === 'ArrowUp' ? 'var(--clr-gold)' : '';
+        downArrow.style.color = key === 'ArrowDown' ? 'var(--clr-gold)' : '';
+        setTimeout(() => {
+            upArrow.style.color = '';
+            downArrow.style.color = '';
+        }, 150);
+    }
+
     // Arrow keys navigation + Live Preview
     searchInput.addEventListener('keydown', (e) => {
         if (!selector.classList.contains('open')) {
@@ -169,6 +183,7 @@ export function initFontSelector() {
             if (filteredFonts[activeIndex]) {
                 temporaryApplyFont(filteredFonts[activeIndex]);
             }
+            updateArrowHighlight('ArrowDown');
         } else if (e.key === 'ArrowUp') {
             e.preventDefault();
             const prevActive = dropdownList.children[activeIndex];
@@ -184,6 +199,7 @@ export function initFontSelector() {
             if (filteredFonts[activeIndex]) {
                 temporaryApplyFont(filteredFonts[activeIndex]);
             }
+            updateArrowHighlight('ArrowUp');
         } else if (e.key === 'Enter') {
             e.preventDefault();
             if (activeIndex >= 0 && activeIndex < filteredFonts.length) {

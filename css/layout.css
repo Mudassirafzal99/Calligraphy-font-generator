@@ -245,6 +245,37 @@
 }
 
 /* ---- GENERATOR ---- */
+/* ---- GENERATOR LAYOUT ---- */
+.generator-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: var(--sp-2);
+}
+
+.generator-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.generator-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: calc(var(--header-height) + 20px);
+}
+
+@media (max-width: 992px) {
+    .generator-layout {
+        flex-direction: column;
+    }
+
+    .generator-sidebar {
+        width: 100%;
+        position: static;
+    }
+}
+
 .generator {
     display: grid;
     grid-template-columns: 1fr;
@@ -451,54 +482,31 @@
 }
 
 /* ---- CONTROLS PANEL ---- */
+/* ---- CONTROLS PANEL (SIDEBAR VERSION) ---- */
 .controls-panel {
-    margin-top: var(--sp-6);
     background: var(--clr-surface);
     border: 1px solid var(--clr-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
-.controls-panel__toggle {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: var(--sp-3);
+.controls-panel__header {
     padding: var(--sp-4) var(--sp-6);
-    font-weight: var(--fw-semibold);
+    background: var(--clr-surface-alt);
+    border-bottom: 1px solid var(--clr-border);
+    font-weight: var(--fw-bold);
     font-size: var(--fs-sm);
-    color: var(--clr-text-muted);
-    transition: color var(--dur-fast);
-}
-
-.controls-panel__toggle:hover {
     color: var(--clr-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.controls-panel__chevron {
-    margin-left: auto;
-    transition: transform var(--dur-base);
-}
-
-.controls-panel.open .controls-panel__chevron {
-    transform: rotate(180deg);
-}
-
-.controls-panel__body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--dur-slow) var(--ease-out);
-}
-
-.controls-panel.open .controls-panel__body {
-    max-height: 600px;
-}
-
-.controls-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--sp-4) var(--sp-6);
-    padding: 0 var(--sp-6) var(--sp-6);
+.controls-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-5);
+    padding: var(--sp-6);
 }
 
 .control-label {

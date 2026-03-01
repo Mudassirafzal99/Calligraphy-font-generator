@@ -214,6 +214,33 @@
     margin-left: auto;
 }
 
+/* Copy Button in Font Card */
+.font-card__copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--clr-surface-alt);
+    border: 1px solid var(--clr-border);
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: var(--fw-medium);
+    color: var(--clr-text);
+    cursor: pointer;
+    transition: all var(--dur-fast);
+}
+
+.font-card__copy:hover {
+    border-color: var(--clr-gold);
+    color: var(--clr-gold);
+}
+
+.font-card__copy.copied {
+    background: var(--clr-text);
+    border-color: var(--clr-text);
+    color: var(--clr-surface);
+}
+
 .controls-panel.open .controls-panel__body {
     max-height: 600px;
 }
@@ -233,22 +260,41 @@
     max-width: 400px;
 }
 
+.font-selector__input-group {
+    position: relative;
+    width: 100%;
+}
+
 .font-selector__search {
     width: 100%;
     background: var(--clr-surface-alt);
     border: 1px solid var(--clr-border);
     border-radius: var(--radius-md);
     padding: var(--sp-3) var(--sp-4);
+    padding-right: 40px;
+    /* Space for arrows */
     color: var(--clr-text);
     font-size: var(--fs-md);
     transition: all var(--dur-base);
     box-shadow: var(--shadow-sm);
 }
 
-.font-selector__search:focus {
-    outline: none;
-    border-color: var(--clr-gold);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, .1);
+.font-selector__arrows {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    color: var(--clr-text-muted);
+    pointer-events: none;
+    line-height: 1;
+    gap: 2px;
+}
+
+.font-selector__search:focus+.font-selector__arrows {
+    color: var(--clr-gold);
 }
 
 .font-selector__search::placeholder {

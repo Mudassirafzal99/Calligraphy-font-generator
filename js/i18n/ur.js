@@ -14,7 +14,7 @@ export default {
     },
     hero: {
         title: '<span class="gold">شاندار</span> خطاطی بنائیں',
-        subtitle: '60+ خطاطی فونٹس · انگریزی · اردو · عربی'
+        subtitle: '60+ خطاطی فونٹس'
     },
     presets: {
         label: 'فوری پری سیٹ:',

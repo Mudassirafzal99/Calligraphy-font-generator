@@ -4,14 +4,14 @@
 import { setPreviewState } from './preview.js';
 
 export function initControls() {
-    // Collapsible toggle
-    const panel = document.getElementById('controls-panel');
-    const toggle = document.getElementById('controls-toggle');
-    if (toggle && panel) {
-        toggle.addEventListener('click', () => {
-            panel.classList.toggle('open');
-        });
-    }
+    // Panel is now always open in sidebar, no toggle needed
+    // const panel = document.getElementById('controls-panel');
+    // const toggle = document.getElementById('controls-toggle');
+    // if (toggle && panel) {
+    //     toggle.addEventListener('click', () => {
+    //         panel.classList.toggle('open');
+    //     });
+    // }
 
     // Font size
     bindSlider('font-size', 'font-size-val', (v) => {

@@ -86,13 +86,16 @@ function renderFontGrid() {
         <button class="font-card__fav ${favActive}" data-font-id="${font.id}" aria-label="Toggle favorite">
           <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 12.5s-5.5-3.5-5.5-7A3 3 0 017 3a3 3 0 015.5 2.5c0 3.5-5.5 7-5.5 7z" stroke="currentColor" stroke-width="1.2" fill="${favActive ? 'currentColor' : 'none'}"/></svg>
         </button>
+        <button class="font-card__copy" title="Copy Text">
+          📋 Copy
+        </button>
         <span class="font-card__badge">${font.languages.map(l => l.toUpperCase()).join(' · ')}</span>
       </div>
     `;
 
         // Click card to select font
         card.addEventListener('click', (e) => {
-            if (e.target.closest('.font-card__fav')) return;
+            if (e.target.closest('.font-card__fav') || e.target.closest('.font-card__copy')) return;
 
             if (font.isPremium && !isPremiumUser()) {
                 document.getElementById('premium-modal')?.classList.add('active');
@@ -106,6 +109,24 @@ function renderFontGrid() {
 
             // Scroll to preview
             document.getElementById('generator')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Copy button action
+        card.querySelector('.font-card__copy')?.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const btn = e.currentTarget;
+            try {
+                await navigator.clipboard.writeText(displayText);
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = 'Copied ✅';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
         });
 
         // Favorite toggle
