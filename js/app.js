@@ -62,14 +62,80 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Track page view
     trackEvent('page', 'view', 'home');
 });
-
 /* ---- Text input → live preview ---- */
 function setupTextInput() {
     const textInput = document.getElementById('text-input');
     if (!textInput) return;
 
+    const charCounter = document.getElementById('char-counter');
+    const heroResultsContainer = document.getElementById('hero-results');
+    const MAX_CHARS = 200;
+
+    const topHeroFonts = [
+        { name: 'Playfair Display', family: '"Playfair Display", serif' },
+        { name: 'Dancing Script', family: '"Dancing Script", cursive' },
+        { name: 'Aref Ruqaa', family: '"Aref Ruqaa", serif' },
+        { name: 'Great Vibes', family: '"Great Vibes", cursive' },
+        { name: 'Italic Serif', family: 'sans-serif', style: 'italic' }
+    ];
+
+    function renderHeroResults(text) {
+        if (!heroResultsContainer) return;
+        heroResultsContainer.innerHTML = '';
+        const displayText = text.trim() || 'Beautiful Calligraphy';
+
+        topHeroFonts.forEach(font => {
+            const card = document.createElement('div');
+            card.className = 'hero-result-card';
+
+            const textElement = document.createElement('div');
+            textElement.className = 'hero-result-text';
+            textElement.textContent = displayText;
+            textElement.style.fontFamily = font.family;
+            if (font.style) textElement.style.fontStyle = font.style;
+
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'hero-copy-btn';
+            copyBtn.innerHTML = '📋 Copy';
+
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(displayText);
+                    copyBtn.innerHTML = 'Copied ✅';
+                    copyBtn.classList.add('copied');
+                    setTimeout(() => {
+                        copyBtn.innerHTML = '📋 Copy';
+                        copyBtn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Copy failed:', err);
+                }
+            });
+
+            card.appendChild(textElement);
+            card.appendChild(copyBtn);
+            heroResultsContainer.appendChild(card);
+        });
+    }
+
+    if (charCounter) {
+        charCounter.textContent = `Characters: ${textInput.value.length} / ${MAX_CHARS}`;
+    }
+    renderHeroResults(textInput.value);
+
     textInput.addEventListener('input', () => {
-        const val = textInput.value;
+        let val = textInput.value;
+        if (val.length > MAX_CHARS) {
+            val = val.substring(0, MAX_CHARS);
+            textInput.value = val;
+        }
+
+        if (charCounter) {
+            charCounter.textContent = `Characters: ${val.length} / ${MAX_CHARS}`;
+        }
+
+        renderHeroResults(val);
+
         setPreviewText(val);
         updateComparisonText(val);
 

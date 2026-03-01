@@ -175,25 +175,38 @@
 
 /* ---- HERO ---- */
 .hero {
-    padding: 40px 20px;
+    padding: 20px 20px;
     position: relative;
 }
 
 .hero__heading {
     text-align: center;
-    margin-bottom: var(--sp-4);
+    margin-bottom: var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .hero__title {
-    margin-bottom: 10px;
-    font-size: 2.5rem;
+    margin: 0;
+    font-size: 2.1rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.02em;
 }
 
 .hero__subtitle {
+    margin: 0;
     color: var(--clr-text-muted);
-    margin-top: 5px;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-family: var(--ff-heading);
+}
+
+.hero__details {
+    margin: 0;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+    opacity: 0.8;
 }
 
 /* ---- PRESETS ---- */
@@ -247,13 +260,14 @@
     background: var(--clr-surface);
     border: 1.5px solid var(--clr-border);
     border-radius: var(--radius-lg);
-    padding: 10px;
+    padding: 12px;
     color: var(--clr-text);
     font-size: 1.1rem;
     transition: border-color var(--dur-base);
-    height: 120px;
-    max-height: 150px;
+    height: 100px;
+    max-height: 120px;
     box-sizing: border-box;
+    resize: none;
 }
 
 .generator__input:focus {
@@ -267,6 +281,66 @@
 }
 
 /* Preview */
+.hero__results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.hero-result-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.hero-result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+}
+
+.hero-result-text {
+    flex: 1;
+    font-size: 1.4rem;
+    color: var(--clr-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+}
+
+.hero-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--clr-surface-alt);
+    border: 1px solid var(--clr-border);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: var(--fw-medium);
+    color: var(--clr-text);
+    cursor: pointer;
+    transition: all var(--dur-fast);
+}
+
+.hero-copy-btn:hover {
+    border-color: var(--clr-gold);
+    color: var(--clr-gold);
+}
+
+.hero-copy-btn.copied {
+    background: var(--clr-text);
+    border-color: var(--clr-text);
+    color: var(--clr-surface);
+}
+
 .generator__preview-wrap {
     position: relative;
 }
