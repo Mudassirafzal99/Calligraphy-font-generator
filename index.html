@@ -117,16 +117,6 @@
           <h2 class="hero__subtitle" data-i18n="hero.subtitle">60+ Calligraphy Fonts</h2>
         </div>
 
-        <!-- Presets -->
-        <div class="presets" id="presets-bar">
-          <span class="presets__label" data-i18n="presets.label">Quick presets:</span>
-          <div class="presets__buttons">
-            <button class="preset-btn" data-preset="names" data-i18n="presets.names">Names</button>
-            <button class="preset-btn" data-preset="quotes" data-i18n="presets.quotes">Quotes</button>
-            <button class="preset-btn" data-preset="wedding" data-i18n="presets.wedding">Wedding</button>
-          </div>
-        </div>
-
         <!-- Top Font Selector Dropdown -->
         <div class="font-selector-wrap" id="font-selector-wrap">
           <div class="font-selector" id="font-selector">
@@ -144,62 +134,19 @@
           </div>
         </div>
 
-        <!-- Text Input + Preview Area -->
-        <div class="generator-layout" id="generator-layout">
-          <div class="generator-main">
-            <div class="generator" id="generator-area">
-              <div class="generator__input-wrap" style="margin-bottom: 2rem;">
-                <textarea class="generator__input" id="text-input" rows="3"
-                  placeholder="Type your calligraphy text here..." data-i18n-attr="placeholder:generator.placeholder"
-                  style="font-family: 'Great Vibes', cursive;" maxlength="200"></textarea>
-                <div class="generator__counter" id="char-counter"
-                  style="text-align: right; font-size: 0.75rem; color: var(--clr-text-muted); margin-top: 4px;">
-                  Characters:
-                  0 / 200</div>
-              </div>
+        <!-- Text Input Area -->
+        <div class="generator-main">
+          <div class="generator" id="generator-area">
+            <div class="generator__input-wrap" style="margin-bottom: 2rem;">
+              <textarea class="generator__input" id="text-input" rows="3"
+                placeholder="Type your calligraphy text here..." data-i18n-attr="placeholder:generator.placeholder"
+                style="font-family: 'Great Vibes', cursive;" maxlength="200"></textarea>
+              <div class="generator__counter" id="char-counter"
+                style="text-align: right; font-size: 0.75rem; color: var(--clr-text-muted); margin-top: 4px;">
+                Characters:
+                0 / 200</div>
             </div>
           </div>
-
-          <aside class="generator-sidebar">
-            <div class="controls-panel open" id="controls-panel">
-              <div class="controls-panel__header">
-                <span data-i18n="controls.title">Advanced Controls</span>
-              </div>
-              <div class="controls-panel__body" id="controls-body" style="max-height: none; overflow: visible;">
-                <div class="controls-stack">
-                  <div class="control-group">
-                    <label class="control-label" data-i18n="controls.fontSize">Font Size</label>
-                    <div class="control-slider-wrap">
-                      <input type="range" class="control-slider" id="font-size" min="12" max="120" value="48" />
-                      <span class="control-value" id="font-size-val">48px</span>
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label" data-i18n="controls.textColor">Text Color</label>
-                    <div class="color-picker-wrap">
-                      <input type="color" class="color-picker" id="text-color" value="#d4af37" />
-                      <span class="control-value" id="color-val">#d4af37</span>
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label" data-i18n="controls.strokeThickness">Thickness</label>
-                    <div class="control-slider-wrap">
-                      <input type="range" class="control-slider" id="stroke-thickness" min="0" max="5" value="0"
-                        step="0.5" />
-                      <span class="control-value" id="stroke-val">0px</span>
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label" data-i18n="controls.strokeColor">Stroke Color</label>
-                    <div class="color-picker-wrap">
-                      <input type="color" class="color-picker" id="stroke-color" value="#0b1d33" />
-                      <span class="control-value" id="stroke-color-val">#0b1d33</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
 

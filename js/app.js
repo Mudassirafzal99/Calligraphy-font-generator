@@ -6,11 +6,9 @@ import { initI18n, setLanguage } from './i18n/i18n.js';
 import { loadAllFonts } from './fonts/font-loader.js';
 import { getTrendingFonts, getAllFonts } from './fonts/font-data.js';
 import { initPreview, setPreviewText, setPreviewFont } from './preview.js';
-import { initControls } from './controls.js';
 import { initFontBrowser } from './font-browser.js';
 import { initFontSelector } from './font-selector.js';
 import { initComparison, updateComparisonText } from './comparison.js';
-import { initPresets } from './presets.js';
 import { initShare } from './share.js';
 import { initPremium, isPremiumUser } from './premium.js';
 import { initAds } from './ads.js';
@@ -40,11 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Init modules
     initPreview();
-    initControls();
     initFontBrowser();
     initFontSelector();
     initComparison();
-    initPresets();
     initPremium();
     initAds();
     initAnalytics();
