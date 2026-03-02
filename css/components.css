@@ -146,7 +146,7 @@
 .font-card:hover {
     border-color: var(--clr-gold);
     box-shadow: var(--shadow-gold);
-    transform: translateY(-3px);
+    transform: scale(1.02) translateY(-2px);
 }
 
 .font-card:hover::before {
@@ -159,9 +159,9 @@
 }
 
 .font-card__name {
-    font-family: var(--ff-body);
-    font-size: var(--fs-xs);
-    color: var(--clr-text-muted);
+    font-family: var(--ff-heading);
+    font-size: var(--fs-sm);
+    color: var(--clr-gold);
     margin-bottom: var(--sp-3);
     display: flex;
     align-items: center;

@@ -5,6 +5,7 @@ import { getAllFonts, getFontsByLanguage } from './fonts/font-data.js';
 import { setPreviewFont } from './preview.js';
 import { isFavorite, toggleFavorite } from './favorites.js';
 import { isPremiumUser } from './premium.js';
+import { convertToUnicode } from './unicode-mapping.js';
 
 let currentFilter = 'all';
 let selectedFontId = 'great-vibes';
@@ -73,12 +74,12 @@ function renderFontGrid() {
         const displayText = customText || defaultSample;
 
         card.innerHTML = `
-      ${lockIcon}
       <div class="font-card__name">
         <span>${font.name}</span>
         ${trendBadge}
         ${premiumBadge}
       </div>
+      ${lockIcon}
       <div class="font-card__preview" style="font-family: ${font.family}" data-sample="${defaultSample}">
         ${displayText}
       </div>
@@ -86,7 +87,7 @@ function renderFontGrid() {
         <button class="font-card__fav ${favActive}" data-font-id="${font.id}" aria-label="Toggle favorite">
           <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 12.5s-5.5-3.5-5.5-7A3 3 0 017 3a3 3 0 015.5 2.5c0 3.5-5.5 7-5.5 7z" stroke="currentColor" stroke-width="1.2" fill="${favActive ? 'currentColor' : 'none'}"/></svg>
         </button>
-        <button class="font-card__copy" title="Copy Text">
+        <button class="font-card__copy" title="Copy Text" data-font-id="${font.id}">
           📋 Copy
         </button>
         <span class="font-card__badge">${font.languages.map(l => l.toUpperCase()).join(' · ')}</span>
@@ -115,8 +116,10 @@ function renderFontGrid() {
         card.querySelector('.font-card__copy')?.addEventListener('click', async (e) => {
             e.stopPropagation();
             const btn = e.currentTarget;
+            const mappedText = convertToUnicode(displayText, btn.dataset.fontId);
+
             try {
-                await navigator.clipboard.writeText(displayText);
+                await navigator.clipboard.writeText(mappedText);
                 const originalHTML = btn.innerHTML;
                 btn.innerHTML = 'Copied ✅';
                 btn.classList.add('copied');
@@ -139,6 +142,7 @@ function renderFontGrid() {
         grid.appendChild(card);
     });
 }
+
 
 /**
  * Re-render the grid (called externally when favorites change, etc.)

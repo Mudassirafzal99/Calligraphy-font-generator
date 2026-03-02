@@ -160,10 +160,12 @@ export function initFontSelector() {
 
     // Arrow keys navigation + Live Preview
     searchInput.addEventListener('keydown', (e) => {
-        if (!selector.classList.contains('open')) {
+        if (!selector.classList.contains('open') && e.key !== 'Escape') {
             if (e.key === 'ArrowDown' || e.key === 'Enter') {
                 e.preventDefault();
                 searchInput.focus();
+                // If it's closed and they press down, just open it
+                openDropdown();
             }
             return;
         }
@@ -203,6 +205,7 @@ export function initFontSelector() {
         } else if (e.key === 'Enter') {
             e.preventDefault();
             if (activeIndex >= 0 && activeIndex < filteredFonts.length) {
+                // User requirement: Enter should act as selection copy/application
                 selectFont(filteredFonts[activeIndex]);
                 closeDropdown();
                 searchInput.blur();
